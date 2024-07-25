@@ -27,25 +27,40 @@ copiar el archivo a HDFS:
 * Crear un script de shell que corra el ingest automáticamente
 
 # Ejercicio 
-Creamos el archivo (ingest_to_hdfs) en nuestro VC de manera local y posterior los copiamos a nuestro contendor Docker(edvai_hadoop)
+Creamos el archivo (**ingest_to_hdfs**) en nuestro VC de manera local y posterior los copiamos a nuestro contendor Docker(**edvai_hadoop**)
 * docker cp .\ingest_to_hdfs.sh edvai_hadoop:/home/hadoop/scripts/ingest_to_hdfs.sh
+
 ![alt text](image-1.png)
+
 Verificamos que si lo copio de manera correcta 
+
 ![alt text](image.png)
+
 Abrimos el archivo para corroborar
 * cat ingest_to_hdfs
-![alt text](image-3.png)
+
+![alt text](image-2.png)
+
 Cambiamos los permisos para que el script se pueda ejecutar con el usuario Hadoop
 * chown root:hadoop /home/hadoop/scripts/ingest_to_hdfs.sh
 * chown hadoop:hadoop /home/hadoop/scripts/ingest_to_hdfs.sh
+
 ![alt text](image-4.png)
-Permisos de lectura y escritura
-* chmod ugo+rx ingest_to_hdfs.sh 
+
+Asignamos permisos de lectura y ejecución (user-group-other) + (read-execute)
+* chmod ugo+rx ingest_to_hdfs.sh
+
 ![alt text](image-5.png)
+
 Ejecutamos el archivo para validar su funcionalidad.
 * ./ingest_to_hdfs.sh
+
 ![alt text](image-6.png)
-validamos en UI - Hadoop
+
+Validamos en UI - Hadoop
+
 ![alt text](image-7.png)
-confirmamos que ya no exista el archivo en la carpeta landing
+
+Confirmamos que ya no exista el archivo en la carpeta landing
+
 ![alt text](image-8.png)
