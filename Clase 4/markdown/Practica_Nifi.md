@@ -17,6 +17,7 @@ Asignamos permisos de lectura y ejecución (user-group-other) + (read-execute)
 chmod ugo+rx ingest_to_nifi.sh
 ~~~
 ![alt text](../images/image-11.png)
+
 Ejecutamos el archivo para validar su funcionalidad.
 ~~~
 ./home/nifi/ingest/ingest_to_nifi.sh
