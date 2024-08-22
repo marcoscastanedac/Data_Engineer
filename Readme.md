@@ -10,6 +10,7 @@ Repositorio para el manejo e implemenatacion de las distintas actividades que se
 * [Clase 3 - Módulo A](https://github.com/marcoscastanedac/Data_Engineer/tree/main/Clase%203)
 * [Clase 4 - Módulo A](https://github.com/marcoscastanedac/Data_Engineer/tree/main/Clase%204)
 * [Clase 5 - Módulo B](https://github.com/marcoscastanedac/Data_Engineer/tree/main/Clase%205)
+* [Clase 6 - Módulo C](https://github.com/marcoscastanedac/Data_Engineer/tree/main/Clase%206)
 
 ## Descarga del repositorio
 
