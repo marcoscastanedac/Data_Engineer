@@ -14,7 +14,7 @@ df = spark.read.option("header", "true").csv("/ingest/yellow_tripdata_2021-01.cs
 df_cast = df.select(df.VendorID.cast("int"), df.tpep_pickup_datetime.cast("date"), df.payment_type.cast("int"), df.total_amount.cast("double"))
 
 #Creamos un df de filtro para los datos que se deben de cargar 
-df_filter = df_cast.filter(df_cast.payment_type == 4) 
+df_filter = df_cast.filter(df_cast.payment_type == 1) 
 
 #Load de datos
 df_filter.write.insertInto("tripdata_bde.payments")

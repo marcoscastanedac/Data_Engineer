@@ -17,7 +17,7 @@ df_cast = spark.sql("select cast(tpep_pickup_datetime as date), cast(VendorID as
 df_cast.createOrReplaceTempView("v_cast")
 
 #Creamos un df de filtro para los datos que se deben de cargar 
-df_filter = spark.sql("select VendorID, tpep_pickup_datetime, payment_type, total_amount from v_cast where payment_type = 4") 
+df_filter = spark.sql("select VendorID, tpep_pickup_datetime, payment_type, total_amount from v_cast where payment_type = 1") 
 
 # Creamos una vista del filtro para que se cargue
 df_filter.createOrReplaceTempView("v_load_payments")
@@ -57,7 +57,7 @@ spark.sql("insert into tripdata_bde.congestion select * from v_load_congestion")
 
 # Resulve el punto 9
 #Creamos un df de filtro para los datos que se deben de cargar 
-df_filter = spark.sql("select tpep_pickup_datetime, passenger_count, trip_distance, total_amount from v_cast where tpep_pickup_datetime = '2020-12-31' and trip_distance > 15")
+df_filter = spark.sql("select tpep_pickup_datetime, passenger_count, trip_distance, total_amount from v_cast where tpep_pickup_datetime = '2020-12-31' and trip_distance > 15 and passenger_count = 1")
 
 # Creamos una vista del filtro para cargar
 df_filter.createOrReplaceTempView("v_load_distance")
